@@ -26,15 +26,15 @@
                             foreach ($message as $msg) : 
                             if($_SESSION['id_akun']==$msg->id_pengirim){ 
                                 echo
-                            '<div>
-                                <div class="direct-chat-text">
+                            '<div class="d-flex">
+                                <div style="max-width:85%; background-color:FFE4C4; float:left; padding:5px; word-wrap:break-word;">
                                      '.$msg->pesan.'
                                 </div>
                             </div>';
                             } elseif($_SESSION['id_akun']!=$msg->id_pengirim&&$msg->id_pengirim==$_SESSION['id_penerima']){
                             echo
-                            '<div style="margin:0px auto; display:block; width:100%; float:none">
-                                <div style="text-align:right">
+                            '<div class="d-flex">
+                                <div class="ms-auto" style="max-width:85%; background-color:FFA500; float:right; padding:5px; word-wrap:break-word;">
                                     '.$msg->pesan.'     
                                 </div>
                             </div>';
@@ -120,13 +120,13 @@ channel.bind('my-event', function(data) {
         for (var z in data) {
             str +=
                 (<?php echo $_SESSION['id_akun']?>!=data[z].id_pengirim&&data[z].id_pengirim==<?php echo $_SESSION['id_penerima']?>) ?
-                '<div style="margin:0px auto; display:block; width:100%; float:none">'+
-                    '<div style="text-align:right">'+
+                '<div class="d-flex">'+
+                    '<div class="ms-auto" style="max-width:85%; background-color:FFA500; float:right; padding:5px; word-wrap:break-word;">'+
                         data[z].pesan+   
                     '</div>'+
                 '</div>':
-                '<div>'+
-                    '<div class="direct-chat-text">'+
+                '<div class="d-flex">'+
+                    '<div style="max-width:85%; background-color:FFE4C4; float:left; padding:5px; word-wrap:break-word;">'+
                         data[z].pesan+
                     '</div>'+
                 '</div>';

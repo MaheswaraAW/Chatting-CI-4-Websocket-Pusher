@@ -68,12 +68,17 @@ class CMessage extends BaseController
 
         // $builder = $this->db->table('message');
         $sqlmessage = $ModelMessage
-        ->where('id_akun', $id_penerima)
-        // ->orwhere('id_penerima', $id_penerima)
-        ->orwhere('id_akun', $id_akun)
+        ->where('id_akun', $id_akun)
         ->where('id_penerima', $id_penerima)
+        ->orwhere('id_akun', $id_penerima)
+        ->where('id_penerima', $id_akun)
+        // ->orwhere('id_penerima', $id_penerima)
+        // ->orwhere('id_akun', $id_akun)
+        // ->where('id_penerima', $id_akun)
+        // ->where('id_penerima', $id_penerima)
         ->get()->getResult();
-        echo '<script>console.log(.build'.print_r($sqlmessage).'.)</script>';
+        // echo '<script>console.log(.aaaaa'.print_r($sqlmessage).'.)</script>';
+        // echo '<script>console.log(aaaaa'.$sqlmessage.'.)</script>';
         // $builder->select('*');
         //     // ->where('id_penerima', $id_akun)
         //     // ->and()

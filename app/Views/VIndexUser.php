@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="card direct-chat direct-chat-primary">
                     <div class="card-header ui-sortable-handle" style="cursor: move;">
-                        <h3 class="card-title"><?php echo $_SESSION['id_akun']; echo $_SESSION['nama_akun'] ?></h3>    
+                        <h3 class="card-title"><?php echo $_SESSION['nama_akun'] ?></h3>    
                     </div>
                     <div class="card-body">
                     <table class="table table-bordered">
